@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débora Basílio - Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="header-container">
+            <h1>Débora Basílio</h1>
+            <nav class="navbar">
+                <a href="#sobre">Sobre Mim</a>
+                <a href="#habilidades-accordion">Habilidades</a>
+                <a href="#projetos">Projetos</a>
+            </nav>
+            <div class="header-right">
+                <a href="#contato" class="join-btn">Fale Comigo</a>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero blur-circle-bg">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-text">
+                    <span class="badge">Análise e Desenvolvimento de Sistemas | Técnica em Informática | Liderança
+                        e Gestão de Pessoas</span>
+                    <h2>Venha Conhecer <br><span class="gradient-text">Meus Projetos</span></h2>
+
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                        <a href="#formacao" class="btn-secondary">Currículo Profissional e Acadêmico</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="glow-effect"></div>
+                    <img src="fotoperfil.jpg" alt="Débora Basílio" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-container animate-on-scroll">
+            <div class="section-header">
+                <h2>Sobre Mim</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content grid-layout">
+                <div class="about-text glass-card" style="margin-bottom: 30px;">
+                    <p>Nasci em Paraíso do Norte, no interior do Paraná, e atualmente resido em Maringá-PR, onde
+                        concilio minha rotina de trabalho e estudos. Apaixonada por tecnologia, busco ativamente uma
+                        oportunidade para ingressar na área, visando iniciar a minha trajetória e consolidar o meu
+                        crescimento profissional.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-column glass-card" id="formacao">
+                        <h3><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Análise e Desenvolvimento de Sistemas</h4>
+                                <span class="timeline-date">Em Andamento</span>
+                                <p>Unicesumar</p>
+                                <ul class="timeline-desc custom-list">
+                                    <li>Lógica de Programação e POO</li>
+                                    <li>Arquitetura de Sistemas e Banco de Dados (SQL)</li>
+                                    <li>Engenharia de Software e Metodologias Ágeis</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Técnico em Informática</h4>
+                                <span class="timeline-date">Concluído</span>
+                                <p>Instituto Federal do Paraná (IFPR)</p>
+                                <ul class="timeline-desc custom-list">
+                                    <li>Programação em Java e PHP.</li>
+                                    <li>Infraestrutura de Redes e Hardware.</li>
+                                    <li>Robótica e IoT aplicados a microcontroladores.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Informática Básica</h4>
+                                <span class="timeline-date">Concluído</span>
+                                <ul class="timeline-desc custom-list">
+                                    <li>Pacote Office Avançado.</li>
+                                    <li>Gestão eficiente de comunicação corporativa.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 1: Experiência Profissional -->
+                    <div class="timeline-column glass-card">
+                        <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Líder de Atendimento</h4>
+                                <span class="timeline-date">Atualmente</span>
+                                <p>Jacaré Vermelho - Maringá</p>
+                                <ul class="timeline-desc custom-list">
+                                    <li>Gestão e estruturação da equipe de atendimento.</li>
+                                    <li>Condução de treinamentos corporativos focados em excelência.</li>
+                                    <li>Controle rigoroso de processos operacionais e melhoria contínua.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2: Formação Acadêmica -->
+                    <div class="timeline-column glass-card skills-accordion-card" id="habilidades-accordion">
+                        <h3><i class="fas fa-star"></i>Habilidades</h3>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion('hard-skills-content', this)">
+                                <h4>Hard Skills</h4>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" id="hard-skills-content">
+                                <div class="skills-wrapper accordion-skills">
+                                    <div class="skill-tag"><i class="fab fa-html5"></i> HTML</div>
+                                    <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</div>
+                                    <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+                                    <div class="skill-tag"><i class="fab fa-react"></i> React</div>
+                                    <div class="skill-tag"><i class="fab fa-node"></i> Node.js</div>
+                                    <div class="skill-tag"><i class="fas fa-robot"></i> Robótica</div>
+                                    <div class="skill-tag"><i class="fab fa-php"></i> PHP</div>
+                                    <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion('soft-skills-content', this)">
+                                <h4>Soft Skills</h4>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </div>
+                            <div class="accordion-content" id="soft-skills-content">
+                                <div class="skills-wrapper accordion-skills">
+                                    <div class="skill-tag"><i class="fas fa-comments"></i> Comunicação</div>
+                                    <div class="skill-tag"><i class="fas fa-users-cog"></i> Liderança</div>
+                                    <div class="skill-tag"><i class="fas fa-users"></i> Trabalho em Equipe</div>
+                                    <div class="skill-tag"><i class="fas fa-brain"></i> Resolução de Problemas</div>
+                                    <div class="skill-tag"><i class="fas fa-sync-alt"></i> Adaptabilidade</div>
+                                    <div class="skill-tag"><i class="fas fa-lightbulb"></i> Pensamento Crítico</div>
+                                    <div class="skill-tag"><i class="fas fa-handshake"></i> Empatia</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="section-container animate-on-scroll">
+            <div class="section-header">
+                <h2>Projetos</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="projects-grid solo-project">
+                <article class="project-card glass-card">
+                    <div class="project-image">
+                        <a href="https://github.com/deborabasilio" target="_blank">
+                            <img src="github_modern_banner.png" alt="Meu Perfil no GitHub">
+                        </a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Meu Perfil no GitHub</h3>
+                        <p>Explore meus repositórios no GitHub para visualizar todos os projetos em que venho
+                            trabalhando, minhas contribuições com código e acompanhar minha evolução no desenvolvimento
+                            de software.</p>
+                        <div class="project-tags">
+                            <span>Código</span>
+                            <span>Repositórios</span>
+                            <span>Open Source</span>
+                        </div>
+                        <a href="https://github.com/deborabasilio" target="_blank"
+                            class="btn-primary project-btn">Acessar GitHub <i class="fab fa-github"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="footer animate-on-scroll">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h2>Vamos Conversar?</h2>
+                <div class="contact-item" data-copy="deborabasilio609@gmail.com">
+                    <p><i class="fas fa-envelope"></i> deborabasiliof@outlook.com</p>
+                    <span class="copy-msg">Copiar</span>
+                </div>
+                <div class="contact-item" data-copy="+5544997511898">
+                    <p><i class="fas fa-phone-alt"></i> +55 44 99751-1898</p>
+                    <span class="copy-msg">Copiar</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Links Úteis</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/debora.basilioo" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/deborabasiliof" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Débora Basílio © <span id="current-year">2026</span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
