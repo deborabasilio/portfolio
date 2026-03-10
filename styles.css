@@ -979,6 +979,11 @@ main {
         padding: 0 20px;
     }
 
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .navbar {
         position: absolute;
         top: 100%;
@@ -1078,8 +1083,18 @@ main {
     }
 
     .badge {
-        padding: 10px;
-        font-size: 0.8rem;
+        padding: 8px 10px;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        border-radius: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .join-btn {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .about-text {
