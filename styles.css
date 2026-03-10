@@ -975,6 +975,11 @@ main {
 
 /* Responsividade */
 @media (max-width: 992px) {
+    header {
+        background: var(--bg-color) !important;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
     .header-container {
         padding: 0 20px;
     }
@@ -984,6 +989,8 @@ main {
         position: static;
         margin-left: -20px;
         margin-right: -20px;
+        padding-top: 50px;
+        /* Deslocar para não bater no header sólido */
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -1036,7 +1043,9 @@ main {
         position: relative;
         top: 0;
         left: 0;
-        width: 100%;
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
         margin-bottom: 25px;
         border-radius: 15px;
         padding: 12px 15px;
@@ -1063,8 +1072,11 @@ main {
     }
 
     .hero-img {
-        height: 220px;
-        max-width: 220px;
+        height: 250px;
+        max-width: 250px;
+        border-radius: 20px;
+        aspect-ratio: 1 / 1;
+        width: 100%;
     }
 
     .footer-content {
@@ -1079,8 +1091,11 @@ main {
     }
 
     .hero-img {
-        height: 180px;
-        max-width: 180px;
+        height: 280px;
+        max-width: 280px;
+        border-radius: 15px;
+        aspect-ratio: 1 / 1;
+        width: 100%;
     }
 
     .join-btn {
@@ -1093,10 +1108,11 @@ main {
     }
 
     .badge {
-        padding: 8px 10px;
+        padding: 8px 12px;
         font-size: 0.75rem;
         line-height: 1.4;
         border-radius: 10px;
+        max-width: 90%;
     }
 
     .btn-primary,
