@@ -193,6 +193,14 @@ header.scrolled {
     gap: 15px;
 }
 
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: inline-block;
+}
+
 .hamburger {
     display: none;
     font-size: 1.5rem;
@@ -255,17 +263,9 @@ main {
     min-height: 80vh;
     display: flex;
     align-items: center;
-    /* Técnica de Sangria Total (Full-Bleed) para expandir o fundo */
-    width: 100vw;
+    width: 100%;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    /* Alinha o texto com o limite da grade de 1200px da página */
-    padding-left: max(40px, calc(50vw - 560px));
-    /* Remove padding direito para a foto colar na borda da tela */
-    padding-right: 0;
+    padding: 120px 0 40px;
     box-sizing: border-box;
     background: radial-gradient(circle at top center, rgba(30, 10, 15, 0.4) 0%, transparent 80%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -284,24 +284,18 @@ main {
 }
 
 .badge {
-    position: absolute;
-    /* Posicionamento superior ajustado para afastar do conteúdo */
-    top: -65px;
-    /* Cálculo exato para a faixa tocar a borda esquerda do monitor */
-    left: calc(-1 * max(40px, calc(50vw - 560px)));
-    /* Expande por toda a tela */
-    width: 100vw;
-    padding: 12px 15px;
+    display: inline-block;
+    padding: 12px 20px;
     background: var(--glass-bg);
-    border: none;
-    border-radius: 0;
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
     color: #fff;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    z-index: 10;
+    margin-bottom: 25px;
 }
 
 .hero-text h2 {
@@ -985,14 +979,13 @@ main {
     }
 
     .hero {
-        width: auto;
-        position: static;
-        margin-left: -20px;
-        margin-right: -20px;
-        padding-top: 50px;
-        /* Deslocar para não bater no header sólido */
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 100%;
+        position: relative;
+        padding-top: 80px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .navbar {
@@ -1000,19 +993,37 @@ main {
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--glass-bg);
+        background: var(--bg-color);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
-        padding: 20px;
-        border-radius: 0 0 20px 20px;
-        border: 1px solid var(--glass-border);
-        border-top: none;
+        padding: 40px 20px;
+        gap: 20px;
+        border-bottom: 1px solid var(--glass-border);
         transform: translateY(-150%);
         opacity: 0;
         transition: all 0.3s ease;
         z-index: -1;
         pointer-events: none;
+        text-align: center;
+    }
+
+    .navbar a.mobile-only {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff !important;
+        border-radius: 50px;
+        max-width: 220px;
+        align-self: center;
+        text-align: center;
+        font-weight: 600;
+        box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    .desktop-only {
+        display: none !important;
     }
 
     .navbar.active {
@@ -1072,11 +1083,11 @@ main {
     }
 
     .hero-img {
-        height: 250px;
+        height: auto;
         max-width: 250px;
         border-radius: 20px;
         aspect-ratio: 1 / 1;
-        width: 100%;
+        width: 80%;
     }
 
     .footer-content {
@@ -1090,21 +1101,22 @@ main {
         gap: 15px;
     }
 
-    .hero-img {
-        height: 280px;
-        max-width: 280px;
-        border-radius: 15px;
-        aspect-ratio: 1 / 1;
-        width: 100%;
-    }
-
-    .join-btn {
+    .navbar .join-btn {
         padding: 10px 18px;
         font-size: 0.85rem;
     }
 
+    .hero-img {
+        max-width: 250px;
+        width: 80%;
+    }
+
     .header-right {
         gap: 10px;
+    }
+
+    .desktop-only {
+        display: none !important;
     }
 
     .badge {
@@ -1116,11 +1128,15 @@ main {
     }
 
     .btn-primary,
-    .btn-secondary,
-    .join-btn {
+    .btn-secondary {
         text-align: center;
         width: 100%;
         box-sizing: border-box;
+    }
+
+    /* Ensure header button stays hidden on small screens */
+    .desktop-only {
+        display: none !important;
     }
 
     .about-text {
