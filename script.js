@@ -36,13 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.animate-on-scroll');
     animateElements.forEach(el => observer.observe(el));
 
-    // Efeito de fundo no cabeçalho ao rolar a página
+    // Efeito de fundo no cabeçalho ao rolar a página (com requestAnimationFrame / Throttle)
     const header = document.querySelector('header');
+    let isScrolling = false;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                isScrolling = false;
+            });
+            isScrolling = true;
         }
     });
 
@@ -109,20 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Lógica de Abertura do Accordion (Habilidades) utilizando Event Listeners limpos
+    document.querySelectorAll('.accordion-header').forEach(headerEl => {
+        headerEl.addEventListener('click', () => {
+            const contentId = headerEl.getAttribute('data-target');
+            const content = document.getElementById(contentId);
+            const item = headerEl.parentElement;
+
+            // Alterna o estado ativo para a rotação do ícone
+            item.classList.toggle('active');
+
+            // Alterna a classe CSS que lida com o max-height definindo a animação
+            if (content) {
+                content.classList.toggle('open');
+            }
+        });
+    });
 });
 
-// Lógica de Abertura do Accordion (Habilidades)
-function toggleAccordion(contentId, headerElement) {
-    const content = document.getElementById(contentId);
-    const item = headerElement.parentElement;
-
-    // Alterna o estado ativo para a rotação do ícone
-    item.classList.toggle('active');
-
-    // Alterna a altura máxima para a animação suave de expansão
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-}
