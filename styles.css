@@ -32,7 +32,6 @@ html {
 }
 
 body {
-    overflow-x: hidden;
     font-family: var(--font-body);
     background: linear-gradient(135deg, #3a2214, #4f2e1a, #693e25, #3a2214);
     background-size: 400% 400%;
