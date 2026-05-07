@@ -1075,8 +1075,7 @@ main {
         position: static;
         margin-left: -20px;
         margin-right: -20px;
-        padding-top: 50px;
-        /* Deslocar para não bater no header sólido */
+        padding-top: 110px; /* Aumentado para o texto não ficar embaixo do menu fixo */
         padding-left: 20px;
         padding-right: 20px;
     }
