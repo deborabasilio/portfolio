@@ -1,7 +1,7 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Rolagem suave para os links de navegação
+    // Menu scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer para animações ao rolar a página
+    // Animações de rolagem
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -32,11 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Selecionar elementos para animar
     const animateElements = document.querySelectorAll('.animate-on-scroll');
     animateElements.forEach(el => observer.observe(el));
 
-    // Efeito de fundo no cabeçalho ao rolar a página (com requestAnimationFrame / Throttle)
+    // Muda o cabeçalho ao rolar a página
     const header = document.querySelector('header');
     let isScrolling = false;
 
@@ -54,26 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Copiar para a área de transferência ao clicar nos itens de contato
+    // Copiar contato para a área de transferência
     document.querySelectorAll('.contact-item').forEach(item => {
         item.addEventListener('click', function () {
             const textToCopy = this.getAttribute('data-copy');
 
-            // API Clipboard
             navigator.clipboard.writeText(textToCopy).then(() => {
-                // Adiciona a animação de sobressalto e classe copiada
                 this.classList.add('bounce');
                 this.classList.add('copied');
 
                 const msgSpan = this.querySelector('.copy-msg');
                 msgSpan.textContent = 'Copiado!';
 
-                // Remove a classe da animação de sobressalto após 400ms
                 setTimeout(() => {
                     this.classList.remove('bounce');
                 }, 400);
 
-                // Volta ao normal após 2 segundos
                 setTimeout(() => {
                     this.classList.remove('copied');
                     msgSpan.textContent = 'Copiar';
@@ -84,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Atualizar o ano do copyright automaticamente
+    // Atualiza o ano no rodapé
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
@@ -107,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Fechar menu ao clicar num link
+        // Fechar o menu ao clicar em um link
         navbar.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navbar.classList.remove('active');
@@ -118,17 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica de Abertura do Accordion (Habilidades) utilizando Event Listeners limpos
+    // Acordeão de Habilidades
     document.querySelectorAll('.accordion-header').forEach(headerEl => {
         headerEl.addEventListener('click', () => {
             const contentId = headerEl.getAttribute('data-target');
             const content = document.getElementById(contentId);
             const item = headerEl.parentElement;
 
-            // Alterna o estado ativo para a rotação do ícone
             item.classList.toggle('active');
 
-            // Alterna a classe CSS que lida com o max-height definindo a animação
             if (content) {
                 content.classList.toggle('open');
             }
