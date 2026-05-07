@@ -1083,7 +1083,7 @@ main {
 
     .mobile-only-link {
         display: block !important;
-        color: #e8c99a !important;
+        color: var(--primary) !important;
         font-weight: 700 !important;
         margin-top: 10px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1118,6 +1118,16 @@ main {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    .navbar a {
+        color: var(--text-color);
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+
+    .navbar a:hover {
+        color: var(--primary);
     }
 
     .hamburger {
