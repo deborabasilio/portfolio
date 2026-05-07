@@ -1083,7 +1083,7 @@ main {
 
     .mobile-only-link {
         display: block !important;
-        color: var(--primary) !important;
+        color: #1a1512 !important;
         font-weight: 700 !important;
         margin-top: 10px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1121,8 +1121,9 @@ main {
     }
 
     .navbar a {
-        color: var(--text-color);
-        font-size: 1.1rem;
+        color: #1a1512 !important; /* Cor muito escura forçada */
+        font-size: 1.15rem;
+        font-weight: 700;
         padding: 10px 0;
     }
 
