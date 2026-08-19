@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Menu scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
