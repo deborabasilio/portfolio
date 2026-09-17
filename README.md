@@ -52,7 +52,7 @@ O projeto foi construído utilizando tecnologias web nativas:
 
 Sinta-se à vontade para me mandar uma mensagem:
 
-- **Email:** deborabasiliof@outlook.com
+- **Email:** deborabasilio609@gmail.com
 - **LinkedIn:** [linkedin.com/in/deborabasiliof](https://www.linkedin.com/in/deborabasiliof)
 - **Instagram:** [@debora.basilioo](https://instagram.com/debora.basilioo)
 
